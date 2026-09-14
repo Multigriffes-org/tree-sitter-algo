@@ -52,12 +52,15 @@ export default grammar({
 
     _declaration: ($) =>
       choice($.const_declaration, $.func_declaration, $.var_declaration),
-    func_declaration: ($) =>
-      seq($.identifier, $.parameter_list, optional($.output_type)),
     var_declaration: ($) => seq($.identifier, $.type_definition),
     const_declaration: ($) =>
       seq($.identifier, $.type_definition, $.const_assignation),
     const_assignation: ($) => seq(":=", $._expression),
+    func_declaration: ($) =>
+      seq($.identifier, $.parameter_type_list, optional($.output_type)),
+
+    parameter_type_list: ($) =>
+      seq("(", optional(seq($._type, repeat(seq(",", $._type)))), ")"),
 
     algorithme: ($) => seq("Algorithme:", repeat($.statement)),
 

@@ -293,7 +293,7 @@
           "named": true
         },
         {
-          "type": "parameter_list",
+          "type": "parameter_type_list",
           "named": true
         }
       ]
@@ -466,6 +466,21 @@
         },
         {
           "type": "type_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter_type_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "primitive_type",
           "named": true
         }
       ]
