@@ -23,6 +23,7 @@ export default grammar({
       choice($._operation, $.primitive, $.identifier, $.func_call, $.priority),
 
     comment: ($) => seq("{", /[^}]*/, "}"),
+    identifier: ($) => /[a-zA-Z_]+[a-zA-Z0-9_]*/,
 
     func_definition: ($) =>
       seq(
@@ -33,7 +34,6 @@ export default grammar({
         $.algorithme,
       ),
 
-    identifier: ($) => /[a-zA-Z_]+[a-zA-Z0-9_]*/,
     parameter_list: ($) =>
       seq(
         "(",
@@ -58,11 +58,10 @@ export default grammar({
     const_assignation: ($) => seq(":=", $._expression),
     func_declaration: ($) =>
       seq($.identifier, $.parameter_type_list, optional($.output_type)),
-
     parameter_type_list: ($) =>
       seq("(", optional(seq($._type, repeat(seq(",", $._type)))), ")"),
 
-    algorithme: ($) => seq("Algorithme:", $.algorithme_boundary),
+    algorithme: ($) => seq("Algorithme:", optional($.algorithme_boundary)),
     algorithme_boundary: ($) =>
       seq($.start_keyword, repeat($.statement), $.end_keyword),
     start_keyword: ($) =>
@@ -74,7 +73,13 @@ export default grammar({
     return: ($) => seq($.return_keyword, $._expression),
     return_keyword: ($) => choice("Retourner", "retourner", "Return", "return"),
 
-    func_call: ($) => seq($.identifier, $.parameter_list),
+    func_call: ($) => seq($.identifier, $.parameter_input_list),
+    parameter_input_list: ($) =>
+      seq(
+        "(",
+        optional(seq($._expression, repeat(seq(",", $._expression)))),
+        ")",
+      ),
 
     _type: ($) => choice($.primitive_type),
 
