@@ -44,6 +44,31 @@
         }
       ]
     },
+    "keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "end_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "start_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "vocab_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "algorithme_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "return_keyword"
+        }
+      ]
+    },
     "comment": {
       "type": "SEQ",
       "members": [
@@ -187,8 +212,12 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "SYMBOL",
+          "name": "vocab_keyword"
+        },
+        {
           "type": "STRING",
-          "value": "Lexique:"
+          "value": ":"
         },
         {
           "type": "REPEAT",
@@ -196,6 +225,15 @@
             "type": "SYMBOL",
             "name": "_declaration"
           }
+        }
+      ]
+    },
+    "vocab_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Lexique"
         }
       ]
     },
@@ -334,8 +372,12 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "SYMBOL",
+          "name": "algorithme_keyword"
+        },
+        {
           "type": "STRING",
-          "value": "Algorithme:"
+          "value": ":"
         },
         {
           "type": "CHOICE",
@@ -348,6 +390,15 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "algorithme_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Algorithme"
         }
       ]
     },

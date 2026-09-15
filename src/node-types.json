@@ -55,11 +55,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
         {
           "type": "algorithme_boundary",
+          "named": true
+        },
+        {
+          "type": "algorithme_keyword",
           "named": true
         }
       ]
@@ -87,6 +91,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "algorithme_keyword",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "assignation",
@@ -916,12 +925,17 @@
     }
   },
   {
+    "type": "vocab_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "vocabulary",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "const_declaration",
@@ -933,6 +947,10 @@
         },
         {
           "type": "var_declaration",
+          "named": true
+        },
+        {
+          "type": "vocab_keyword",
           "named": true
         }
       ]
@@ -991,7 +1009,7 @@
     "named": false
   },
   {
-    "type": "Algorithme:",
+    "type": "Algorithme",
     "named": false
   },
   {
@@ -1011,7 +1029,7 @@
     "named": false
   },
   {
-    "type": "Lexique:",
+    "type": "Lexique",
     "named": false
   },
   {

@@ -14,13 +14,20 @@ export default grammar({
 
   word: ($) => $.identifier,
 
-  //conflicts: ($) => [[$.algorithme]],
-
   rules: {
     source_file: ($) => repeat($._definition),
     _definition: ($) => choice($.func_definition),
     _expression: ($) =>
       choice($._operation, $.primitive, $.identifier, $.func_call, $.priority),
+
+    keyword: ($) =>
+      choice(
+        $.end_keyword,
+        $.start_keyword,
+        $.vocab_keyword,
+        $.algorithme_keyword,
+        $.return_keyword,
+      ),
 
     comment: ($) => seq("{", /[^}]*/, "}"),
     identifier: ($) => /[a-zA-Z_]+[a-zA-Z0-9_]*/,
@@ -48,7 +55,8 @@ export default grammar({
     type_definition: ($) => seq(":", $._type),
     output_type: ($) => seq("->", $._type),
 
-    vocabulary: ($) => seq("Lexique:", repeat($._declaration)),
+    vocabulary: ($) => seq($.vocab_keyword, ":", repeat($._declaration)),
+    vocab_keyword: ($) => choice("Lexique"),
 
     _declaration: ($) =>
       choice($.const_declaration, $.func_declaration, $.var_declaration),
@@ -61,7 +69,9 @@ export default grammar({
     parameter_type_list: ($) =>
       seq("(", optional(seq($._type, repeat(seq(",", $._type)))), ")"),
 
-    algorithme: ($) => seq("Algorithme:", optional($.algorithme_boundary)),
+    algorithme: ($) =>
+      seq($.algorithme_keyword, ":", optional($.algorithme_boundary)),
+    algorithme_keyword: ($) => choice("Algorithme"),
     algorithme_boundary: ($) =>
       seq($.start_keyword, repeat($.statement), $.end_keyword),
     start_keyword: ($) =>
