@@ -55,9 +55,32 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
+        {
+          "type": "algorithme_boundary",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "algorithme_boundary",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "end_keyword",
+          "named": true
+        },
+        {
+          "type": "start_keyword",
+          "named": true
+        },
         {
           "type": "statement",
           "named": true
@@ -251,6 +274,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "end_keyword",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "float_type",
@@ -651,7 +679,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -691,11 +719,20 @@
           "named": true
         },
         {
+          "type": "return_keyword",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "return_keyword",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -712,6 +749,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "start_keyword",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "statement",
@@ -902,7 +944,35 @@
     "named": false
   },
   {
+    "type": "Debut",
+    "named": false
+  },
+  {
+    "type": "Début",
+    "named": false
+  },
+  {
+    "type": "End",
+    "named": false
+  },
+  {
+    "type": "Fin",
+    "named": false
+  },
+  {
     "type": "Lexique:",
+    "named": false
+  },
+  {
+    "type": "Retourner",
+    "named": false
+  },
+  {
+    "type": "Return",
+    "named": false
+  },
+  {
+    "type": "Start",
     "named": false
   },
   {
@@ -910,11 +980,27 @@
     "named": true
   },
   {
+    "type": "debut",
+    "named": false
+  },
+  {
+    "type": "début",
+    "named": false
+  },
+  {
+    "type": "end",
+    "named": false
+  },
+  {
     "type": "entier",
     "named": false
   },
   {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "fin",
     "named": false
   },
   {
@@ -951,6 +1037,10 @@
   },
   {
     "type": "réel",
+    "named": false
+  },
+  {
+    "type": "start",
     "named": false
   },
   {

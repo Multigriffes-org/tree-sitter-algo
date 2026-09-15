@@ -14,7 +14,7 @@ export default grammar({
 
   word: ($) => $.identifier,
 
-  conflicts: ($) => [[$.algorithme]],
+  //conflicts: ($) => [[$.algorithme]],
 
   rules: {
     source_file: ($) => repeat($._definition),
@@ -62,11 +62,17 @@ export default grammar({
     parameter_type_list: ($) =>
       seq("(", optional(seq($._type, repeat(seq(",", $._type)))), ")"),
 
-    algorithme: ($) => seq("Algorithme:", repeat($.statement)),
+    algorithme: ($) => seq("Algorithme:", $.algorithme_boundary),
+    algorithme_boundary: ($) =>
+      seq($.start_keyword, repeat($.statement), $.end_keyword),
+    start_keyword: ($) =>
+      choice("Debut", "Début", "debut", "début", "Start", "start"),
+    end_keyword: ($) => choice("Fin", "fin", "End", "end"),
 
     statement: ($) => choice($.return, $.assignation),
     assignation: ($) => seq($.identifier, "<-", $._expression),
-    return: ($) => seq(choice("retourner", "return"), $._expression),
+    return: ($) => seq($.return_keyword, $._expression),
+    return_keyword: ($) => choice("Retourner", "retourner", "Return", "return"),
 
     func_call: ($) => seq($.identifier, $.parameter_list),
 

@@ -338,11 +338,78 @@
           "value": "Algorithme:"
         },
         {
+          "type": "SYMBOL",
+          "name": "algorithme_boundary"
+        }
+      ]
+    },
+    "algorithme_boundary": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "start_keyword"
+        },
+        {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
             "name": "statement"
           }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "end_keyword"
+        }
+      ]
+    },
+    "start_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Debut"
+        },
+        {
+          "type": "STRING",
+          "value": "Début"
+        },
+        {
+          "type": "STRING",
+          "value": "debut"
+        },
+        {
+          "type": "STRING",
+          "value": "début"
+        },
+        {
+          "type": "STRING",
+          "value": "Start"
+        },
+        {
+          "type": "STRING",
+          "value": "start"
+        }
+      ]
+    },
+    "end_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Fin"
+        },
+        {
+          "type": "STRING",
+          "value": "fin"
+        },
+        {
+          "type": "STRING",
+          "value": "End"
+        },
+        {
+          "type": "STRING",
+          "value": "end"
         }
       ]
     },
@@ -380,21 +447,33 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "retourner"
-            },
-            {
-              "type": "STRING",
-              "value": "return"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "return_keyword"
         },
         {
           "type": "SYMBOL",
           "name": "_expression"
+        }
+      ]
+    },
+    "return_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Retourner"
+        },
+        {
+          "type": "STRING",
+          "value": "retourner"
+        },
+        {
+          "type": "STRING",
+          "value": "Return"
+        },
+        {
+          "type": "STRING",
+          "value": "return"
         }
       ]
     },
@@ -725,11 +804,7 @@
       "name": "comment"
     }
   ],
-  "conflicts": [
-    [
-      "algorithme"
-    ]
-  ],
+  "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [],
