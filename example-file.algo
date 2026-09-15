@@ -1,6 +1,6 @@
 rect_2_ha(longueur: float, largeur: float) -> float
     Lexique:
-        METRE_PAR_HECTARE: float := -100-10000.0
+        METRE_PAR_HECTARE: float := 10000.89
         moyenne_3(float, float, float) -> float
         resultat: float
     Algorithme:
@@ -10,7 +10,7 @@ rect_2_ha(longueur: float, largeur: float) -> float
 moyenne_3(first: float, second: float, third: float) -> float
     Lexique:
         moyenne: float
-        NBR_NOTES: float := -3.0
+        NBR_NOTES: float := -100.7-3.0
     Algorithme:
     moyenne <- (first + second + third) / NBR_NOTES
     retourner moyenne
@@ -32,6 +32,6 @@ calcule_prix(taux_tva: float, prix_unit_ht: float, quantite: int)
         prix_ttc <- prix_ht * (taux_tva/100 + 1.0)
         retourner prix_ttc
 
-test()
+test() -> float
     Lexique:
     Algorithme:
