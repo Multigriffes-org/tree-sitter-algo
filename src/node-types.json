@@ -290,6 +290,21 @@
     "fields": {}
   },
   {
+    "type": "float",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "float_type",
     "named": true,
     "fields": {}
@@ -1008,6 +1023,10 @@
     "named": false
   },
   {
+    "type": ".",
+    "named": false
+  },
+  {
     "type": "/",
     "named": false
   },
@@ -1094,10 +1113,6 @@
   {
     "type": "float",
     "named": false
-  },
-  {
-    "type": "float",
-    "named": true
   },
   {
     "type": "identifier",

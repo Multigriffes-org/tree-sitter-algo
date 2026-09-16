@@ -102,7 +102,7 @@ export default grammar({
     bool_type: () => "bool",
 
     primitive: ($) => choice($.float, $.int, $.string, $.bool),
-    float: () => /[0-9]+\.[0-9]+/,
+    float: ($) => seq($.int, ".", $.int),
     int: () => /[0-9]+/,
     string: () => seq('"', /[^"]*/, '"'),
     bool: () => choice("true", "false"),
