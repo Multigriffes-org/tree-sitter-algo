@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "algo",
+      "camelcase": "Algo",
+      "title": "Algo",
+      "scope": "source.algo",
+      "file-types": [
+        "algo"
+      ],
+      "injection-regex": "^algo$",
+      "class-name": "TreeSitterAlgo"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Algo grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Multigriffes",
+        "email": "multigriffes@laposte.net",
+        "url": ""
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/Multigriffes-org/tree-sitter-algo",
+      "funding": ""
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "java": false,
+    "node": false,
+    "python": true,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}
