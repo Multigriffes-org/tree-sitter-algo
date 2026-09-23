@@ -47,13 +47,38 @@ test(zea: float) -> float
     ea <- test
     end
 
-eu() -> int
-Lexique:
-Algorithme:
-debut
-fin
+eu()
 
-ou()
+
 Lexique:
+
+
 Algorithme:
-    debut fin
+
+
+ou() -> void
+
+
+    lexique:
+
+
+
+    Algorithme:
+
+        debut
+
+
+
+        fin
+
+test()
+
+
+
+
+
+
+
+
+
+

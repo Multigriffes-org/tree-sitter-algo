@@ -111,8 +111,10 @@ export default grammar({
     add: ($) => prec.left(1, seq($._expression, "+", $._expression)),
     sub: ($) => prec.left(1, seq($._expression, "-", $._expression)),
     mul: ($) => prec.left(2, seq($._expression, "*", $._expression)),
-    div: ($) => prec.left(2, seq($._expression, "/", $._expression)),
-    reminder: ($) => prec.left(2, seq($._expression, "%", $._expression)),
+    div: ($) =>
+      prec.left(2, seq($._expression, choice("div", "/"), $._expression)),
+    reminder: ($) =>
+      prec.left(2, seq($._expression, choice("reste", "%"), $._expression)),
     minus: ($) => prec(3, seq("-", $._expression)),
 
     priority: ($) => seq("(", $._expression, ")"),
