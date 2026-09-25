@@ -46,3 +46,8 @@ zig-out/
 *.tgz
 *.zip
 *.jar
+
+# Tree Sitter artifacts
+src/grammar.json
+src/node-types.json
+src/parser.c

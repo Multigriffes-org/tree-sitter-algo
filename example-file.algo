@@ -5,7 +5,7 @@ rect_2_ha(longueur: float, largeur: float) -> float
         resultat: float
     Algorithme:
         Debut
-        resultat <- (longueur * largeur) / METRE_PAR_HECTARE + moyenne_3()
+        resultat <- (longueur * largeur) div METRE_PAR_HECTARE + moyenne_3()
         retourner resultat
         Fin
 
