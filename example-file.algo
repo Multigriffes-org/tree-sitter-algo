@@ -5,8 +5,8 @@ rect_2_ha(longueur: float, largeur: float) -> float
         resultat: float
     Algorithme:
         Debut
-        resultat <- (longueur * largeur) div METRE_PAR_HECTARE + moyenne_3()
-        retourner resultat
+            resultat <- (longueur * largeur) div METRE_PAR_HECTARE + moyenne_3()
+            retourner resultat
         Fin
 
 moyenne_3(first: float, second: float, third: float) -> float
@@ -15,8 +15,8 @@ moyenne_3(first: float, second: float, third: float) -> float
         NBR_NOTES: float := -100.7-3.0
     Algorithme:
         debut
-        moyenne <- (first + second + third) / NBR_NOTES - eu(x, i)
-        retourner moyenne
+            moyenne <- (first + second + third) / NBR_NOTES - eu(x, i)
+            retourner moyenne
         fin
 
 franc_2_euro(franc: float) -> float
@@ -24,9 +24,9 @@ franc_2_euro(franc: float) -> float
         EURO_PAR_FRANC: float := "test"
         euro: float
     Algorithme:
-    start
-        euro <- franc * EURO_PAR_FRANC
-        retourner euro
+        start
+            euro <- franc * EURO_PAR_FRANC
+            retourner euro
         fin
 
 calcule_prix(taux_tva: float, prix_unit_ht: float, quantite: int)
@@ -34,51 +34,10 @@ calcule_prix(taux_tva: float, prix_unit_ht: float, quantite: int)
         prix_ht: float
         prix_ttc: float
     Algorithme:
-    start
-        prix_ht <- prix_unit_ht * quantite
-        prix_ttc <- prix_ht * (taux_tva/100 + 1.0)
-        retourner prix_ttc
-    fin
-
-test(zea: float) -> float
-    Lexique:
-    Algorithme:
-    start
-    ea <- test
-    end
-
-eu()
-
-
-Lexique:
-
-
-Algorithme:
-
-
-ou() -> void
-
-
-    lexique:
-
-
-
-    Algorithme:
-
-        debut
-
-
-
+        start
+            prix_ht <- prix_unit_ht * quantite
+            prix_ttc <- prix_ht * (taux_tva/100 + 1.0)
+            retourner prix_ttc
         fin
 
-test()
-
-
-
-
-
-
-
-
-
-
+test(x:floast)
